@@ -22,10 +22,18 @@
         slides.addClass('fading-slideshow-image-wrapper');
         slides.eq(counter).addClass('fading-slideshow-current');
         var interval = setInterval(function() {
-          update();
-        }, settings.intervalTimer);
+          if (!updating) {
+            updating = true;
+        
+            update();
 
+            setTimeout(function() {
+              updating = false;
+            }, settings.fadingTimer);
+          }
+        }, settings.intervalTimer);
         var updating = false;
+        
         thisSlideshow.on('click.slideshow', function() {
           if (!updating) {
             updating = true;
