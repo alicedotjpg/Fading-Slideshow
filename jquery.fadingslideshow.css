@@ -1,0 +1,25 @@
+.fading-slideshow-wrapper {
+  position: relative;
+}
+
+.fading-slideshow-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  will-change: opacity;
+}
+
+.fading-slideshow-image-wrapper:first-child {
+  z-index: 1;
+}
+
+.fading-slideshow-image-wrapper.fading-slideshow-current {
+  z-index: 3;
+}
+
+.fading-slideshow-image-wrapper.fading-slideshow-previous {
+  z-index: 2;
+}
