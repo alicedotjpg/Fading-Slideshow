@@ -1,8 +1,4 @@
-  /* 
-  Initialise Fading Slideshow on the container that holds the slides.
-  */
-  
-  $('.fast').fadingSlideshow({
+ $('.fast').fadingSlideshow({
     intervalTimer: 400,
     fadingTimer: 200,
   });
