@@ -1,17 +1,23 @@
- $('.fast').fadingSlideshow({
-    intervalTimer: 400,
-    fadingTimer: 200,
-    changeFunction: function(counter, total)
-  });
+var slideshow = $('.slideshow');
+ 
 
-  $('.medium').fadingSlideshow({
-    intervalTimer: 2000,
-    fadingTimer: 1000,
-    changeFunction: function(counter, total)
-  });
+// Initialise
 
-  $('.slow').fadingSlideshow({
-    intervalTimer: 4000,
-    fadingTimer: 2000,
-    changeFunction: function(counter, total)
-  });
+slideshow.fadingSlideshow({
+  
+  // Options
+  intervalTimer: 4000,
+  fadingTimer: 1000, 
+  changeFunction: function(counter, total) {},
+
+});
+
+// Navigation events
+
+$('.previous').on('click', function() {
+  slideshow.fadingSlideshow('navigate', 'prev');
+});
+
+$('.next').on('click', function() {
+  slideshow.fadingSlideshow('navigate', 'next');
+})
